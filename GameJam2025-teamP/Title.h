@@ -1,19 +1,18 @@
-﻿#pragma once
+#pragma once
 #include "AbstractScene.h"
 
-class GameMain: public AbstractScene
+class Title :public AbstractScene
 {
 public:
 
 private:
 
-
 public:
     // コンストラクタ
-    GameMain();
+    Title();
 
     //デストラクタ
-    ~GameMain();
+    ~Title();
 
     //シーンの更新処理を行う
     AbstractScene* Update() override;

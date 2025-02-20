@@ -1,7 +1,7 @@
-﻿#pragma once
+#pragma once
 #include "AbstractScene.h"
 
-class GameMain: public AbstractScene
+class End :public AbstractScene
 {
 public:
 
@@ -10,10 +10,10 @@ private:
 
 public:
     // コンストラクタ
-    GameMain();
+    End();
 
     //デストラクタ
-    ~GameMain();
+    ~End();
 
     //シーンの更新処理を行う
     AbstractScene* Update() override;
