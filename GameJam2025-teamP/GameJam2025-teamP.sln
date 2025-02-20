@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32414.318
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GameJam2025-teamP", "GameJam2025-teamP.vcxproj", "{F984F6BA-A1EB-48FB-A70A-D1C132C04847}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F984F6BA-A1EB-48FB-A70A-D1C132C04847}.Debug|x64.ActiveCfg = Debug|x64
+		{F984F6BA-A1EB-48FB-A70A-D1C132C04847}.Debug|x64.Build.0 = Debug|x64
+		{F984F6BA-A1EB-48FB-A70A-D1C132C04847}.Debug|x86.ActiveCfg = Debug|Win32
+		{F984F6BA-A1EB-48FB-A70A-D1C132C04847}.Debug|x86.Build.0 = Debug|Win32
+		{F984F6BA-A1EB-48FB-A70A-D1C132C04847}.Release|x64.ActiveCfg = Release|x64
+		{F984F6BA-A1EB-48FB-A70A-D1C132C04847}.Release|x64.Build.0 = Release|x64
+		{F984F6BA-A1EB-48FB-A70A-D1C132C04847}.Release|x86.ActiveCfg = Release|Win32
+		{F984F6BA-A1EB-48FB-A70A-D1C132C04847}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6FDB033B-CD24-4E5C-ADD3-71639AB9D63D}
+	EndGlobalSection
+EndGlobal
