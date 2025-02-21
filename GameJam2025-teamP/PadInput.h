@@ -21,6 +21,8 @@ private:
 private:
 	//コンストラクタ
 	PAD_INPUT() = default;
+
+
 public:
 	//パッド入力の状態を更新する
 	static void UpdateKey()
@@ -69,5 +71,6 @@ public:
 	{
 		return Lstick;
 	}
+
 };
 
