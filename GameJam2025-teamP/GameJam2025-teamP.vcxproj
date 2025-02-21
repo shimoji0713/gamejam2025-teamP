@@ -157,7 +157,7 @@
     <ClCompile Include="Help.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PadInput.cpp" />
-    <ClCompile Include="Ranking.cpp" />
+    <ClCompile Include="Ranking_date.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Title.cpp" />
   </ItemGroup>
@@ -168,7 +168,7 @@
     <ClInclude Include="GameMain.h" />
     <ClInclude Include="Help.h" />
     <ClInclude Include="PadInput.h" />
-    <ClInclude Include="Ranking.h" />
+    <ClInclude Include="Ranking_date.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Title.h" />
   </ItemGroup>

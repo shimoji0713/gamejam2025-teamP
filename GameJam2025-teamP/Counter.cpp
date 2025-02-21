@@ -1,6 +1,9 @@
 #include "Counter.h"
 #include "PadInput.h"
 
+//
+Counter* Counter::instance = nullptr;
+
 //コンストラクタ
 Counter::Counter() : 
 	b_count(0)
