@@ -16,8 +16,10 @@ int cursor_y;
 
 Title::Title()
 {
+	title_image = LoadGraph("Resource/Images/IMG_2120.PNG");
+	cursor_image = LoadGraph("Resource/Images/26146911.png");
 	select_number = 0;
-	cursor_y = 0;
+	cursor_y = 240;
 }
 
 Title::~Title()
@@ -40,6 +42,8 @@ AbstractScene* Title::Update()
 		select_number = select_number % 4;
 	}
 
+	cursor_y = 240 + (select_number * 60);
+
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
 	{
 		switch (select_number)
@@ -59,5 +63,6 @@ AbstractScene* Title::Update()
 
 void Title::Draw() const
 {
-
+	DrawGraph(0, 0, title_image, TRUE);
+	DrawRotaGraph(220, cursor_y, 0.5, 0.0, cursor_image, TRUE);
 }
