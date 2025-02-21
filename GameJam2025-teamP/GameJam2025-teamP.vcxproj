@@ -151,6 +151,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Angle.cpp" />
     <ClCompile Include="Counter.cpp" />
     <ClCompile Include="End.cpp" />
     <ClCompile Include="GameMain.cpp" />
@@ -163,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AbstractScene.h" />
+    <ClInclude Include="Angle.h" />
     <ClInclude Include="Counter.h" />
     <ClInclude Include="End.h" />
     <ClInclude Include="GameMain.h" />

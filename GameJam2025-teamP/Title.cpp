@@ -47,7 +47,7 @@ AbstractScene* Title::Update()
 		case 0:
 			return new GameMain;
 		case 1:
-			return new Ranking;
+			//return new Ranking;
 		case 2:
 			return new Help;
 		default:
