@@ -16,8 +16,8 @@ int cursor_y;
 
 Title::Title()
 {
-	title_image = LoadGraph("Resource/Images/IMG_2120.PNG");
-	cursor_image = LoadGraph("Resource/Images/26146911.png");
+	title_image = LoadGraph("Resource/Images/IMG_2119.PNG");
+	cursor_image = LoadGraph("Resource/Images/IMG_cursor.png");
 	select_number = 0;
 	cursor_y = 240;
 }
