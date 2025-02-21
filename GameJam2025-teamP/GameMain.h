@@ -1,11 +1,12 @@
 ﻿#pragma once
 #include "AbstractScene.h"
 
+#include"Angle.h"
+
 class GameMain: public AbstractScene
 {
-public:
-
 private:
+    Angle* angle;
 
 
 public:
