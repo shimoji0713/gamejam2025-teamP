@@ -3,7 +3,7 @@
 #include"PadInput.h"
 
 #include"GameMain.h"
-#include"Ranking.h"
+#include"Ranking_date.h"
 #include"Help.h"
 #include"End.h"
 
