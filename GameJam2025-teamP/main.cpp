@@ -2,7 +2,7 @@
 //#include"Define.h"
 #include"SceneManager.h"
 //#include"FpsController.h"
-//#include"Title.h"
+#include"Title.h"
 #include"PadInput.h"
 #include"GameMain.h"
 
@@ -32,7 +32,7 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	try
 	{
 		// 初期シーンとして GameMain を設定
-		sceneMng = new SceneManager((AbstractScene*)new GameMain());
+		sceneMng = new SceneManager((AbstractScene*)new Title());
 
 	}
 	catch (const char* err)
