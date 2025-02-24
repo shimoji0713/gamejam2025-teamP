@@ -11,6 +11,9 @@ GameMain::GameMain()
 	timingpress = new TimingPress;
 
 	progress = 0;
+
+	player = new Player();
+	player->Initialize();
 }
 
 GameMain::~GameMain()
@@ -19,6 +22,8 @@ GameMain::~GameMain()
 
 AbstractScene* GameMain::Update()
 {
+	player->Update();
+
 	switch (progress)
 	{
 	//開始合図
@@ -60,6 +65,8 @@ void GameMain::Draw() const
 		DrawBox(-1, -1, 1280, 720, 0xffffff, TRUE);
 	}*/
 	
+	player->Draw();
+
 	switch (progress)
 	{
 		//開始合図

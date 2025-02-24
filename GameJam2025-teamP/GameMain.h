@@ -3,6 +3,7 @@
 
 #include"Angle.h"
 #include"TimingPress.h"
+#include"Player.h"
 
 class GameMain: public AbstractScene
 {
@@ -13,7 +14,7 @@ private:
 
     int progress;       //ゲームの進行度
 
-
+    Player* player;
 
 public:
     // コンストラクタ
