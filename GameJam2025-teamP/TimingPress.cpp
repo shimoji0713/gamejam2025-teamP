@@ -62,3 +62,8 @@ void TimingPress::Draw() const
 	DrawBox(40, 400, 600, 450, 0xffffff, false);
 
 }
+
+int TimingPress::GetTimingScore()
+{
+	return timing_score;
+}

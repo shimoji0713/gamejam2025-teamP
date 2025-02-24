@@ -24,5 +24,9 @@ public:
 
     //シーンの描画処理を行う
     void Draw() const;
+
+    //タイミングのスコアを獲得
+    int GetTimingScore();
+
 };
 

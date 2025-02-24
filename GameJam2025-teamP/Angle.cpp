@@ -80,3 +80,8 @@ void Angle::Draw() const
     DrawRotaGraph2(300-120, 300+120, 0, 12, 1, Image_angle, target_image, TRUE);
     
 }
+
+int Angle::GetAngle()
+{
+    return angle;
+}

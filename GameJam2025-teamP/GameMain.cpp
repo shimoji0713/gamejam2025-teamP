@@ -6,11 +6,13 @@
 
 GameMain::GameMain()
 {
+	counter = new Counter;
+
 	angle = new Angle;
 
 	timingpress = new TimingPress;
 
-	progress = 0;
+	progress = 1;
 }
 
 GameMain::~GameMain()
@@ -28,7 +30,7 @@ AbstractScene* GameMain::Update()
 
 	//連打
 	case(1):
-
+		counter->Update();
 		break;
 
 	//角度
@@ -41,24 +43,23 @@ AbstractScene* GameMain::Update()
 		timingpress->Update();
 		break;
 
+	case(4):
+
+
 	default:
 		break;
 	}
 
 
-	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B)) {
+	/*if (PAD_INPUT::OnButton(XINPUT_BUTTON_B)) {
 		progress++;
-	}
+	}*/
 
 	return this;
 }
 
 void GameMain::Draw() const
 {
-	/*if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
-	{
-		DrawBox(-1, -1, 1280, 720, 0xffffff, TRUE);
-	}*/
 	
 	switch (progress)
 	{
@@ -70,6 +71,8 @@ void GameMain::Draw() const
 		//連打
 	case(1):
 		DrawFormatString(0, 0, 0xffffff, "rennda");
+
+		counter->Draw();
 		break;
 
 		//角度
@@ -88,4 +91,5 @@ void GameMain::Draw() const
 	default:
 		break;
 	}
+
 }

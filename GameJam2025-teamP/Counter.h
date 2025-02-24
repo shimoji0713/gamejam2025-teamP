@@ -1,17 +1,30 @@
 #pragma once
 #include "PadInput.h"
 
-//�{�^���A�ŃN���X
+// ボタン入力をカウントするクラス
 class Counter
 {
-	int b_count;  //�A�ł����{�^���̉�
+private:
+	int b_count;			// ボタンが押された回数
 
+	int value_decrease_count;		//連打値の減少
+
+	int counter_time;		//時間制限
+
+public:
+	// コンストラクタ
 	Counter();
+
+	//デストラクタ
+	~Counter();
+
+	//シーンの更新処理を行う
 	void Update();
-	void Draw();
+
+	//シーンの描画処理を行う
+	void Draw() const;
 
 	int GetCount();
-	void ResetCount();
 	void PushButton();
 };
 

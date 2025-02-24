@@ -36,5 +36,8 @@ public:
 
     //シーンの描画処理を行う
     void Draw() const;
+
+    //角度の値を獲得
+    int GetAngle();
 };
 
