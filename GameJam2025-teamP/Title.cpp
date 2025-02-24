@@ -63,7 +63,7 @@ AbstractScene* Title::Update()
 
 void Title::Draw() const
 {
-	DrawRotaGraph(0, 0, 3.0, 0.0, title_image, TRUE);
+	DrawRotaGraph(320, 240, 1.5, 0.0, title_image, TRUE);
 	DrawRotaGraph(250, cursor_y, 0.1, 0.0, cursor_image, TRUE);
 
 	DrawFormatString(320, 100, GetColor(255, 0, 0), "チャージバット");
