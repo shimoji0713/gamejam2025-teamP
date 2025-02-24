@@ -63,6 +63,12 @@ AbstractScene* Title::Update()
 
 void Title::Draw() const
 {
-	DrawGraph(0, 0, title_image, TRUE);
-	DrawRotaGraph(220, cursor_y, 0.5, 0.0, cursor_image, TRUE);
+	DrawRotaGraph(0, 0, 3.0, 0.0, title_image, TRUE);
+	DrawRotaGraph(250, cursor_y, 0.1, 0.0, cursor_image, TRUE);
+
+	DrawFormatString(320, 100, GetColor(255, 0, 0), "チャージバット");
+	DrawFormatString(320, 230, GetColor(255, 255, 255), "スタート");
+	DrawFormatString(320, 290, GetColor(255, 255, 255), "ランキング");
+	DrawFormatString(320, 350, GetColor(255, 255, 255), "ヘルプ");
+	DrawFormatString(320, 410, GetColor(255, 255, 255), "エンド");
 }
