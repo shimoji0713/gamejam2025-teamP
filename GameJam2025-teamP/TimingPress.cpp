@@ -56,4 +56,9 @@ void TimingPress::Draw() const
 	DrawFormatString(0, 110, 0xffffff, "%d", change_timing);
 	DrawFormatString(0, 130, 0xffffff, "%d", timing_score);
 
+	float a = (float)560 * ((float)change_timing / (float)120);
+
+	DrawBox(40,400,40+a,450,0x00FFFF,TRUE);
+	DrawBox(40, 400, 600, 450, 0xffffff, false);
+
 }
