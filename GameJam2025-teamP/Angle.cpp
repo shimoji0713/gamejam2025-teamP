@@ -70,10 +70,9 @@ void Angle::Update()
 void Angle::Draw() const
 {
 
+    //デバック用表示
     DrawFormatString(0, 110, 0xffffff, "%d", change_angle);
-
     DrawFormatString(0, 130, 0xffffff, "%d", angle);
-
     DrawFormatString(0, 150, 0xffffff, "%d", time_count);
 
     DrawRotaGraph(300, 300 , 1, 0, angle_image, TRUE);

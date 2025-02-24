@@ -7,6 +7,8 @@
 GameMain::GameMain()
 {
 	angle = new Angle;
+
+	timingpress = new TimingPress;
 }
 
 GameMain::~GameMain()
@@ -15,7 +17,9 @@ GameMain::~GameMain()
 
 AbstractScene* GameMain::Update()
 {
-	angle->Update();
+	//angle->Update();
+
+	timingpress->Update();
 
 	return this;
 }
@@ -27,7 +31,9 @@ void GameMain::Draw() const
 		DrawBox(-1, -1, 1280, 720, 0xffffff, TRUE);
 	}
 	
-	angle->Draw();
+	//angle->Draw();
+
+	timingpress->Draw();
 
 	//DrawBox(45,45,45+50,45+50,0x000000,true);
 }

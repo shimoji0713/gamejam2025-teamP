@@ -2,11 +2,14 @@
 #include "AbstractScene.h"
 
 #include"Angle.h"
+#include"TimingPress.h"
 
 class GameMain: public AbstractScene
 {
 private:
     Angle* angle;
+
+    TimingPress* timingpress;
 
 
 public:
