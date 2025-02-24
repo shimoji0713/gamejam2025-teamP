@@ -11,6 +11,9 @@ private:
 
     TimingPress* timingpress;
 
+    int progress;       //ゲームの進行度
+
+
 
 public:
     // コンストラクタ
