@@ -1,6 +1,7 @@
 #pragma once
+#include "AbstractScene.h"
 
-class Result
+class Result :public AbstractScene
 {
 private:
 	double counter_score;	//連打のスコア
@@ -15,7 +16,9 @@ private:
 
 	int animation_cont;
 
-	float animation_time;
+	int anime_images[10];
+
+	int fram;
 
 public:
 	// コンストラクタ
@@ -25,7 +28,7 @@ public:
 	~Result();
 
 	//シーンの更新処理を行う
-	void Update();
+	AbstractScene* Update() override;
 
 	//シーンの描画処理を行う
 	void Draw() const;
