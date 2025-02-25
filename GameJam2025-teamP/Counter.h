@@ -1,23 +1,32 @@
 #pragma once
 #include "PadInput.h"
 
-//ƒ{ƒ^ƒ“˜A‘ÅƒNƒ‰ƒX
+//// ãƒœã‚¿ãƒ³å…¥åŠ›ã‚’ã‚«ã‚¦ãƒ³ãƒˆã™ã‚‹ã‚¯ãƒ©ã‚¹
 class Counter
 {
 private:
-	int b_count;  //˜A‘Å‚µ‚½ƒ{ƒ^ƒ“‚Ì‰ñ”
+	int b_count;			// ãƒœã‚¿ãƒ³ãŒæŠ¼ã•ã‚ŒãŸå›æ•°
 
-private:
-	//©ƒNƒ‰ƒX‚Ìƒ|ƒCƒ“ƒ^iÀ‘Ì‚ğƒAƒhƒŒƒX‚Ìæ‚Å•Û—Lj
-	static Counter* instance;
+	int value_decrease_count;		//é€£æ‰“å€¤ã®æ¸›å°‘
 
-	Counter();  //ƒCƒ“ƒXƒgƒ‰ƒNƒ^
-	void Update();  //XVˆ—
-	void Draw();  //•`‰æˆ—
+	int counter_time;		//æ™‚é–“åˆ¶é™
 
-	int GetCount();  //ƒJƒEƒ“ƒg‚Ì‰ñ”‚ğæ“¾
-	void ResetCount();  //ƒJƒEƒ“ƒg‚ÌƒŠƒZƒbƒg
-	void PushButton();  //Bƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚½‚çAƒJƒEƒ“ƒg‚ğ+1‚É‚·‚é
+public:
+	// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	Counter();
+
+	//ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+	~Counter();
+
+	//ã‚·ãƒ¼ãƒ³ã®æ›´æ–°å‡¦ç†ã‚’è¡Œã†
+	void Update();  
+
+	//ã‚·ãƒ¼ãƒ³ã®æç”»å‡¦ç†ã‚’è¡Œã†
+	void Draw() const;
+
+	int GetCount();  
+
+	void PushButton(); 
 
 };
 

@@ -1,6 +1,6 @@
 #pragma once
-#include"AbstractScene.h"
-class Result : public AbstractScene
+
+class Result
 {
 private:
 
@@ -14,9 +14,9 @@ public:
 	~Result();
 
 	//シーンの更新処理を行う
-	AbstractScene* Update() override;
+	void Update();
 
 	//シーンの描画処理を行う
-	void Draw() const override;
+	void Draw() const;
 };
 
