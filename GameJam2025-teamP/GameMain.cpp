@@ -14,7 +14,11 @@ GameMain::GameMain()
 
 	result = new Result;
 
-	progress = 4;
+	progress = 1;
+
+	player = new Player();
+	player->Initialize();
+
 }
 
 GameMain::~GameMain()
@@ -27,6 +31,8 @@ GameMain::~GameMain()
 
 AbstractScene* GameMain::Update()
 {
+	player->Update();
+
 	switch (progress)
 	{
 	//開始合図
@@ -68,7 +74,8 @@ AbstractScene* GameMain::Update()
 
 void GameMain::Draw() const
 {
-	
+	player->Draw();
+
 	switch (progress)
 	{
 		//開始合図

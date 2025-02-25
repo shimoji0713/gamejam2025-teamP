@@ -16,7 +16,7 @@ Player::~Player()
 //‰Šú‰»ˆ—
 void Player::Initialize()
 {
-	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\batta-.png", 7, 7, 1, 114, 179, anim);
+	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\batta-1.png", 7, 7, 1, 114, 179, anim);
 
 	image = anim[0];
 	animation_time = 0;
