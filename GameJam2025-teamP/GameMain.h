@@ -16,6 +16,8 @@ private:
 
     TimingPress* timingpress;
 
+    Result* result;
+
     int progress;       //ゲームの進行度
 
     Player* player;
