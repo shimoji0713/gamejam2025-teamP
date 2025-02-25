@@ -1,7 +1,13 @@
 #include "Help.h"
+#include"DxLib.h"
+#include"PadInput.h"
+#include"Title.h"
+
+int se;
 
 Help::Help()
 {
+	se = LoadSoundMem("Resource/sound/se/maou_se_system49.mp3");
 }
 
 Help::~Help()
@@ -10,9 +16,19 @@ Help::~Help()
 
 AbstractScene* Help::Update()
 {
-	return nullptr;
+	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
+	{
+		PlaySoundMem(se, DX_PLAYTYPE_NORMAL);
+
+		return new Title;
+	}
+	return this;
 }
 
 void Help::Draw() const
 {
+	DrawFormatString(320, 100, GetColor(255, 255, 255), "Bボタンのみ使用");
+	DrawFormatString(320, 200, GetColor(255, 255, 255), "とにかく連打");
+	DrawFormatString(320, 300, GetColor(255, 255, 255), "赤いところで止める");
+	DrawFormatString(320, 400, GetColor(255, 255, 255), "行き過ぎないように止める");
 }
