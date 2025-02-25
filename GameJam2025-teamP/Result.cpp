@@ -1,5 +1,6 @@
 #include"DxLib.h"
 #include "Result.h"
+#include"Title.h"
 
 #include"PadInput.h"
 
@@ -14,15 +15,18 @@ Result::Result()
 	final_score = 0;
 
 	LoadDivGraph("Resource/image/NUMBER.png", 10, 5, 2, 160, 160, number_images);
+	LoadDivGraph("Resource/image/NUMBER.png", 10, 5, 2, 160, 160, anime_images);
 
-	//animation_cont = 0;
+	animation_cont = 0;
+
+	fram = 0;
 }
 
 Result::~Result()
 {
 }
 
-void Result::Update()
+AbstractScene* Result::Update()
 {
 	counter_score = counter_score * 10;
 
@@ -31,8 +35,21 @@ void Result::Update()
 	TimingScoreCalculation();
 
 	final_score = (int)counter_score + (int)angle_score + (int)timing_score;
-	
-	//animation_cont++;
+
+	fram++;
+	animation_cont++;
+	if (animation_cont>10)
+	{
+		animation_cont = 0;
+	}
+
+	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
+	{
+		//PlaySoundMem(title_se, DX_PLAYTYPE_NORMAL);
+
+		return new Title;
+	}
+	return this;
 }
 
 void Result::Draw() const
@@ -50,10 +67,19 @@ void Result::Draw() const
 		final_score / 1 % 10000 % 1000 % 100 % 10
 	};
 
-	for (int i=0;i<5;i++)
+	if (fram<180)
 	{
-		DrawRotaGraph(i * 50, 240, 2.0, 0.0, number_images[dt[i]], TRUE);
+		DrawRotaGraph(250, 240, 2.0, 0.0, anime_images[animation_cont], TRUE);
 	}
+
+	if (fram > 180)
+	{
+		for (int i = 0; i < 5; i++)
+		{
+			DrawRotaGraph((i * 50) + 100, 240, 0.5, 0.0, number_images[dt[i]], TRUE);
+		}
+	}
+	
 }
 
 void Result::SetCounterScore(int counter_s)

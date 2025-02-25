@@ -24,7 +24,7 @@ Counter::~Counter()
 //初期化処理
 void Counter::Initialize()
 {
-	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\power_battar-.png", 4, 4, 1, 347, 362, anim);
+	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\power_battar-1.png", 4, 4, 1, 212.5, 200, anim);
 
 	image = anim[0];
 }
@@ -46,7 +46,7 @@ void Counter::Update()
 //描画処理
 void Counter::Draw() const
 {
-	DrawRotaGraph(500, 300, 1.0, 0.0, image, true);
+	DrawRotaGraph(470, 170, 0, 0.0, image, true);
 
 	DrawFormatString(0, 110, 0xffffff, "%d", b_count);
 	DrawFormatString(0, 130, 0xffffff, "%d", counter_time);
@@ -54,9 +54,9 @@ void Counter::Draw() const
 
 	//DrawBox(300, 200, 600, 240, 0x0000ff, true);
 	//ゲージ枠組み
-	DrawBox(300, 200, 600, 240, 0xffffff, false);
+	DrawBox(300, 350, 600, 390, 0xffffff, false);
 	//ゲージ本体
-	DrawBox(300, 200, 300 + b_count, 240, 0xffff00, true);
+	DrawBox(300, 350, 300 + b_count, 390, 0xffff00, true);
 
 }
 
