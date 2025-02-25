@@ -15,7 +15,7 @@ Angle::Angle()
 
     change_angle = 0;
 
-    angle_speed =1;     //ここで速さを変更する
+    angle_speed =0;     //ここで速さを変更する
 
     speed_count = 0;
 
@@ -25,6 +25,10 @@ Angle::Angle()
 
     time_count = 0;
 
+
+    end_flg = false;
+
+    wait_count = 0;
 }
 
 Angle::~Angle()
@@ -58,6 +62,15 @@ void Angle::Update()
         }
 
     }
+    else
+    {
+        
+        wait_count++;
+
+        if (wait_count > 30) {
+            end_flg = true;
+        }
+    }
 
     if (PAD_INPUT::OnButton(XINPUT_BUTTON_B)) {
         angle = 90-change_angle;
@@ -84,4 +97,9 @@ void Angle::Draw() const
 int Angle::GetAngle()
 {
     return angle;
+}
+
+bool Angle::GetEndFlg()
+{
+    return end_flg;
 }

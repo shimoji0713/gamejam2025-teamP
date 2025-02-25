@@ -12,6 +12,10 @@ private:
 
     int speed_count;       
 
+    int wait_count;
+
+    bool end_flg;       //終了フラグ
+
 public:
     // コンストラクタ
     TimingPress();
@@ -27,6 +31,9 @@ public:
 
     //タイミングのスコアを獲得
     int GetTimingScore();
+
+    //終了確認
+    bool GetEndFlg();
 
 };
 

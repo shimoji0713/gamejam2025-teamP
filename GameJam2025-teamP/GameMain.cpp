@@ -16,10 +16,12 @@ GameMain::GameMain()
 
 	result = new Result;
 
-	progress = 1;
+	progress = 2;
 
 	player = new Player();
 	player->Initialize();
+
+	background_image= LoadGraph("Resource/image/haikei.png");
 
 }
 
@@ -50,11 +52,19 @@ AbstractScene* GameMain::Update()
 	//角度
 	case(2):
 		angle->Update();
+
+		if (angle->GetEndFlg() == true) {
+			progress = progress + 1;
+		}
 		break;
 
 	//目押し
 	case(3):
 		timingpress->Update();
+
+		if (timingpress->GetEndFlg() == true) {
+			progress = progress + 1;
+		}
 		break;
 
 	case(4):
@@ -62,6 +72,21 @@ AbstractScene* GameMain::Update()
 		result->SetAngleScore(angle->GetAngle());
 		result->SetTimingScore(timingpress->GetTimingScore());
 		result->Update();
+
+		//if(リザルト終了確認)
+		// {
+		//	if(ゲームスコアとランキングを比べる){
+		//		ゲームスコアが上だったら
+		//		return new InputRanking();
+		//	}else{
+		//		ゲームスコアが下だったら
+		//		return new DrawRanking();
+		//	}
+		// }
+		//
+
+
+
 	default:
 		break;
 	}
@@ -76,6 +101,7 @@ AbstractScene* GameMain::Update()
 
 void GameMain::Draw() const
 {
+	DrawGraph(0,0,background_image,true);
 	
 	player->Draw();
 

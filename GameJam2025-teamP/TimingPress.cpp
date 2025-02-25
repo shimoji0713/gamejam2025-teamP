@@ -10,9 +10,13 @@ TimingPress::TimingPress()
 
 	change_timing = 0;
 
-	timing_speed = 1;
+	timing_speed = 0;
 
 	speed_count = 0;
+
+	end_flg = false;
+
+	wait_count = 0;
 
 }
 
@@ -43,6 +47,15 @@ void TimingPress::Update()
 			speed_count++;
 		}
 	}
+	else
+	{
+
+		wait_count++;
+
+		if (wait_count > 30) {
+			end_flg = true;
+		}
+	}
 
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B)) {
 		timing_score = change_timing;
@@ -66,4 +79,9 @@ void TimingPress::Draw() const
 int TimingPress::GetTimingScore()
 {
 	return timing_score;
+}
+
+bool TimingPress::GetEndFlg()
+{
+	return end_flg;
 }

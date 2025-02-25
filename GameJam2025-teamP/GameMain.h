@@ -22,6 +22,8 @@ private:
 
     Player* player;
 
+    int background_image;   //背景画像
+
 public:
     // コンストラクタ
     GameMain();
