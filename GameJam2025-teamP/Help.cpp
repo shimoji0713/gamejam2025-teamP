@@ -27,6 +27,7 @@ AbstractScene* Help::Update()
 
 void Help::Draw() const
 {
+	DrawFormatString(0, 0, GetColor(255, 255, 255), "Bボタンを押してタイトルに戻る");
 	DrawFormatString(320, 100, GetColor(255, 255, 255), "Bボタンのみ使用");
 	DrawFormatString(320, 200, GetColor(255, 255, 255), "とにかく連打");
 	DrawFormatString(320, 300, GetColor(255, 255, 255), "赤いところで止める");
