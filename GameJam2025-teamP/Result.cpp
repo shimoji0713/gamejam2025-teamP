@@ -12,6 +12,10 @@ Result::Result()
 	timing_score = 0.0f;
 
 	final_score = 0;
+
+	LoadDivGraph("Resource/image/NUMBER.png", 10, 5, 2, 160, 160, number_images);
+
+	//animation_cont = 0;
 }
 
 Result::~Result()
@@ -28,6 +32,7 @@ void Result::Update()
 
 	final_score = (int)counter_score + (int)angle_score + (int)timing_score;
 	
+	//animation_cont++;
 }
 
 void Result::Draw() const
@@ -36,6 +41,19 @@ void Result::Draw() const
 	DrawFormatString(0, 130, 0xffffff, "%f", angle_score);
 	DrawFormatString(0, 150, 0xffffff, "%f", timing_score);
 	DrawFormatString(0, 170, 0xffffff, "%d", final_score);
+
+	int dt[5] = {
+		final_score / 10000 % 10,
+		final_score / 1000 % 10,
+		final_score / 100 % 100 % 10,
+		final_score / 10 % 1000 % 100 % 10,
+		final_score / 1 % 10000 % 1000 % 100 % 10
+	};
+
+	for (int i=0;i<5;i++)
+	{
+		DrawRotaGraph(i * 50, 240, 2.0, 0.0, number_images[dt[i]], TRUE);
+	}
 }
 
 void Result::SetCounterScore(int counter_s)

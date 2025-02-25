@@ -11,6 +11,12 @@ private:
 
 	int final_score;	//最終スコア
 
+	int number_images[10];
+
+	int animation_cont;
+
+	float animation_time;
+
 public:
 	// コンストラクタ
 	Result();
