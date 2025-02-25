@@ -7,6 +7,7 @@
 GameMain::GameMain()
 {
 	counter = new Counter;
+	counter->Initialize();
 
 	angle = new Angle;
 
