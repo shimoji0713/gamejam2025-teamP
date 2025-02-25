@@ -3,11 +3,11 @@
 #include"PadInput.h"
 #include"Title.h"
 
-int se;
+int help_se;
 
 Help::Help()
 {
-	se = LoadSoundMem("Resource/sound/se/maou_se_system49.mp3");
+	help_se = LoadSoundMem("Resource/sound/se/maou_se_system49.mp3");
 }
 
 Help::~Help()
@@ -18,7 +18,7 @@ AbstractScene* Help::Update()
 {
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
 	{
-		PlaySoundMem(se, DX_PLAYTYPE_NORMAL);
+		PlaySoundMem(help_se, DX_PLAYTYPE_NORMAL);
 
 		return new Title;
 	}

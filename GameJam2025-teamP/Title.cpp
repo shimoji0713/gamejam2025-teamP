@@ -14,7 +14,7 @@ int select_number;
 int cursor_image;
 int cursor_y;
 int bgm;
-int se;
+int title_se;
 
 Title::Title()
 {
@@ -22,7 +22,7 @@ Title::Title()
 	cursor_image = LoadGraph("Resource/image/IMG_cursor.png");
 
 	//bgm = LoadSoundMem("Resource/sound/bgm/small-yakyuu-no-veteran.mp3");
-	se= LoadSoundMem("Resource/sound/se/maou_se_system49.mp3");
+	title_se= LoadSoundMem("Resource/sound/se/maou_se_system49.mp3");
 
 	select_number = 0;
 	cursor_y = 240;
@@ -52,7 +52,7 @@ AbstractScene* Title::Update()
 
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
 	{
-		PlaySoundMem(se,DX_PLAYTYPE_NORMAL);
+		PlaySoundMem(title_se,DX_PLAYTYPE_NORMAL);
 
 		switch (select_number)
 		{
