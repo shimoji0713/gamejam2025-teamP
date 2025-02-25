@@ -40,8 +40,6 @@ void Counter::Update()
 		counter_time++;
 
 		Counter_Animation();
-
-		Draw();
 	}
 }
 
@@ -82,21 +80,19 @@ void Counter::PushButton()
 //ボタンを押した回数によってアニメーションを変える
 void Counter::Counter_Animation()
 {
-	if (b_count >= 200)
+	if (b_count >= 20)
 	{
-		animation_count += animation_count;
+		image = anim[1];
 	}
 
-	if (b_count >= 250)
+	if (b_count >= 30)
 	{
-		animation_count += animation_count;
+		image = anim[2];
 	}
 
-	if (b_count >= 270)
+	if (b_count >= 40)
 	{
-		animation_count += animation_count;
+		image = anim[3];
 	}
 
-
-	image = anim[animation_count];
 }
