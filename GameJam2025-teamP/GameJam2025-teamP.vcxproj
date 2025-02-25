@@ -153,13 +153,15 @@
   <ItemGroup>
     <ClCompile Include="Angle.cpp" />
     <ClCompile Include="Counter.cpp" />
+    <ClCompile Include="DrawRanking.cpp" />
     <ClCompile Include="End.cpp" />
     <ClCompile Include="GameMain.cpp" />
     <ClCompile Include="Help.cpp" />
+    <ClCompile Include="InputRanking.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="PadInput.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="RankingScene.cpp" />
+    <ClCompile Include="Ranking.cpp" />
     <ClCompile Include="Result.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="TimingPress.cpp" />
@@ -169,12 +171,14 @@
     <ClInclude Include="AbstractScene.h" />
     <ClInclude Include="Angle.h" />
     <ClInclude Include="Counter.h" />
+    <ClInclude Include="DrawRanking.h" />
     <ClInclude Include="End.h" />
     <ClInclude Include="GameMain.h" />
     <ClInclude Include="Help.h" />
+    <ClInclude Include="InputRanking.h" />
     <ClInclude Include="PadInput.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="RankingScene.h" />
+    <ClInclude Include="Ranking.h" />
     <ClInclude Include="Result.h" />
     <ClInclude Include="SceneBase.h" />
     <ClInclude Include="SceneManager.h" />

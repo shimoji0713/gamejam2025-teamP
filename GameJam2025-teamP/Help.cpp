@@ -27,9 +27,9 @@ AbstractScene* Help::Update()
 
 void Help::Draw() const
 {
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "Bƒ{ƒ^ƒ“‚ğ‰Ÿ‚µ‚Äƒ^ƒCƒgƒ‹‚É–ß‚é");
-	DrawFormatString(320, 100, GetColor(255, 255, 255), "Bƒ{ƒ^ƒ“‚Ì‚İg—p");
-	DrawFormatString(320, 200, GetColor(255, 255, 255), "‚Æ‚É‚©‚­˜A‘Å");
-	DrawFormatString(320, 300, GetColor(255, 255, 255), "Ô‚¢‚Æ‚±‚ë‚Å~‚ß‚é");
-	DrawFormatString(320, 400, GetColor(255, 255, 255), "s‚«‰ß‚¬‚È‚¢‚æ‚¤‚É~‚ß‚é");
+	/*DrawFormatString(0, 0, GetColor(255, 255, 255), "Bï¿½{ï¿½^ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Äƒ^ï¿½Cï¿½gï¿½ï¿½ï¿½É–ß‚ï¿½");
+	DrawFormatString(320, 100, GetColor(255, 255, 255), "Bï¿½{ï¿½^ï¿½ï¿½ï¿½Ì‚İgï¿½p");
+	DrawFormatString(320, 200, GetColor(255, 255, 255), "ï¿½Æ‚É‚ï¿½ï¿½ï¿½ï¿½Aï¿½ï¿½");
+	DrawFormatString(320, 300, GetColor(255, 255, 255), "ï¿½Ô‚ï¿½ï¿½Æ‚ï¿½ï¿½ï¿½Å~ï¿½ß‚ï¿½");
+	DrawFormatString(320, 400, GetColor(255, 255, 255), "ï¿½sï¿½ï¿½ï¿½ß‚ï¿½ï¿½È‚ï¿½ï¿½æ‚¤ï¿½É~ï¿½ß‚ï¿½");*/
 }

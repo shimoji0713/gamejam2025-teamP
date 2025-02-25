@@ -1,9 +1,12 @@
 #include "Title.h"
 #include"DxLib.h"
 #include"PadInput.h"
-#include"RankingScene.h"
+
 #include"GameMain.h"
-#include"Ranking_date.h"
+
+#include"DrawRanking.h"
+#include"InputRanking.h"
+
 #include"Help.h"
 #include"End.h"
 
@@ -59,7 +62,7 @@ AbstractScene* Title::Update()
 		case 0:
 			return new GameMain;
 		case 1:
-			return new Ranking;
+			return new InputRanking;
 		case 2:
 			return new Help;
 		default:
@@ -78,14 +81,14 @@ void Title::Draw() const
 	SetFontThickness();
 	ChangeFont("");
 	ChangeFontType();*/
-	DrawFormatString(320, 100, GetColor(255, 0, 0), "ƒ`ƒƒ[ƒWƒoƒbƒg");
+	DrawFormatString(320, 100, GetColor(255, 0, 0), "ï¿½`ï¿½ï¿½ï¿½[ï¿½Wï¿½oï¿½bï¿½g");
 
 	/*SetFontSize();
 	SetFontThickness();
 	ChangeFont("");
 	ChangeFontType();*/
-	DrawFormatString(320, 230, GetColor(255, 255, 255), "ƒXƒ^[ƒg");
-	DrawFormatString(320, 290, GetColor(255, 255, 255), "ƒ‰ƒ“ƒLƒ“ƒO");
-	DrawFormatString(320, 350, GetColor(255, 255, 255), "ƒwƒ‹ƒv");
-	DrawFormatString(320, 410, GetColor(255, 255, 255), "ƒGƒ“ƒh");
+	DrawFormatString(320, 230, GetColor(255, 255, 255), "ï¿½Xï¿½^ï¿½[ï¿½g");
+	DrawFormatString(320, 290, GetColor(255, 255, 255), "rannkingu");
+	DrawFormatString(320, 350, GetColor(255, 255, 255), "ï¿½wï¿½ï¿½ï¿½v");
+	DrawFormatString(320, 410, GetColor(255, 255, 255), "ï¿½Gï¿½ï¿½ï¿½h");
 }
