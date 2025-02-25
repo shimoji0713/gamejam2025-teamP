@@ -18,8 +18,8 @@ int title_se;
 
 Title::Title()
 {
-	title_image = LoadGraph("Resource/image/IMG_2119.JPG");
-	cursor_image = LoadGraph("Resource/image/IMG_cursor.png");
+	title_image = LoadGraph("Resource/image/title.JPG");
+	cursor_image = LoadGraph("Resource/image/cursor.png");
 
 	//bgm = LoadSoundMem("Resource/sound/bgm/small-yakyuu-no-veteran.mp3");
 	title_se= LoadSoundMem("Resource/sound/se/maou_se_system49.mp3");

@@ -11,12 +11,20 @@ private:
 
 	int counter_time;		//時間制限
 
+private:
+	int anim[4];  //プレイヤーのアニメーション
+	int image;  //画像
+	int animation_count;  //カウント
+
 public:
 	// コンストラクタ
 	Counter();
 
 	//デストラクタ
 	~Counter();
+
+	//初期化処理
+	void Initialize();
 
 	//シーンの更新処理を行う
 	void Update();  
@@ -27,6 +35,9 @@ public:
 	int GetCount();  
 
 	void PushButton(); 
+
+	//ボタンを押した回数によってアニメーションを変える
+	void Counter_Animation();
 
 };
 

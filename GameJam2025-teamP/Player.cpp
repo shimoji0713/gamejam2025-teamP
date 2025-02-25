@@ -23,6 +23,7 @@ void Player::Initialize()
 }
 void Player::Update()
 {
+
 	AnimationControl();
 }
 void Player::Draw()

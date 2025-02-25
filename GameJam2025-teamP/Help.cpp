@@ -16,8 +16,6 @@ Help::~Help()
 
 AbstractScene* Help::Update()
 {
-	return nullptr;
-
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
 	{
 		PlaySoundMem(help_se, DX_PLAYTYPE_NORMAL);
