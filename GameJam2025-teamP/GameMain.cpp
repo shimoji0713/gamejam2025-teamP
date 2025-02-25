@@ -12,11 +12,17 @@ GameMain::GameMain()
 
 	timingpress = new TimingPress;
 
-	progress = 1;
+	result = new Result;
+
+	progress = 4;
 }
 
 GameMain::~GameMain()
 {
+	delete counter;
+	delete angle;
+	delete timingpress;
+	delete result;
 }
 
 AbstractScene* GameMain::Update()
@@ -44,8 +50,10 @@ AbstractScene* GameMain::Update()
 		break;
 
 	case(4):
-
-
+		result->SetCounterScore(counter->GetCount());
+		result->SetAngleScore(angle->GetAngle());
+		result->SetTimingScore(timingpress->GetTimingScore());
+		result->Update();
 	default:
 		break;
 	}
@@ -87,6 +95,11 @@ void GameMain::Draw() const
 		DrawFormatString(0, 0, 0xffffff, "meosi");
 
 		timingpress->Draw();
+		break;
+	case(4):
+		DrawFormatString(0, 0, 0xffffff, "result");
+
+		result->Draw();
 		break;
 	default:
 		break;
