@@ -6,7 +6,13 @@
 
 GameMain::GameMain()
 {
+	counter = new Counter;
+
 	angle = new Angle;
+
+	timingpress = new TimingPress;
+
+	progress = 1;
 }
 
 GameMain::~GameMain()
@@ -15,19 +21,75 @@ GameMain::~GameMain()
 
 AbstractScene* GameMain::Update()
 {
-	angle->Update();
+	switch (progress)
+	{
+	//開始合図
+	case(0):
+		
+		break;
+
+	//連打
+	case(1):
+		counter->Update();
+		break;
+
+	//角度
+	case(2):
+		angle->Update();
+		break;
+
+	//目押し
+	case(3):
+		timingpress->Update();
+		break;
+
+	case(4):
+
+
+	default:
+		break;
+	}
+
+
+	/*if (PAD_INPUT::OnButton(XINPUT_BUTTON_B)) {
+		progress++;
+	}*/
 
 	return this;
 }
 
 void GameMain::Draw() const
 {
-	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
-	{
-		DrawBox(-1, -1, 1280, 720, 0xffffff, TRUE);
-	}
 	
-	angle->Draw();
+	switch (progress)
+	{
+		//開始合図
+	case(0):
+		DrawFormatString(0, 0, 0xffffff, "kaisi");
+		break;
 
-	//DrawBox(45,45,45+50,45+50,0x000000,true);
+		//連打
+	case(1):
+		DrawFormatString(0, 0, 0xffffff, "rennda");
+
+		counter->Draw();
+		break;
+
+		//角度
+	case(2):
+		DrawFormatString(0, 0, 0xffffff, "kakudo");
+
+		angle->Draw();
+		break;
+
+		//目押し
+	case(3):
+		DrawFormatString(0, 0, 0xffffff, "meosi");
+
+		timingpress->Draw();
+		break;
+	default:
+		break;
+	}
+
 }
