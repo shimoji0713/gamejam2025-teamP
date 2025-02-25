@@ -4,6 +4,7 @@
 #include "PadInput.h"
 
 
+
 GameMain::GameMain()
 {
 	counter = new Counter;
@@ -65,6 +66,7 @@ AbstractScene* GameMain::Update()
 
 void GameMain::Draw() const
 {
+	
 	player->Draw();
 
 	switch (progress)

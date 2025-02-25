@@ -1,6 +1,7 @@
 #pragma once
+#include "AbstractScene.h"
 #include <string>
-class RankingData
+class RankingData: public AbstractScene
 {
 public:
 	static void Initialize(); //‰Šúˆ—
