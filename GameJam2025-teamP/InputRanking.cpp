@@ -2,13 +2,15 @@
 #include "DrawRanking.h"
 #include "PadInput.h"
 
-InputRanking::InputRanking() {
+InputRanking::InputRanking(int final_score) {
 	//score = round;
 	cursorPoint = { 0, 0 };
 	ranking.ReadRanking();
 	for (int i = 0; i < 5; i++) {
 		rankingData[i] = ranking.GetRankingData(i);
 	}
+
+	score = final_score;
 
 	//SelectSE = LoadSoundMem("Resources/sounds/cursorsound.mp3");
 	//DesideSE = LoadSoundMem("Resources/sounds/kettei.mp3");
@@ -17,6 +19,7 @@ InputRanking::InputRanking() {
 }
 
 AbstractScene* InputRanking::Update() {
+
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_DPAD_UP) == 1) {
 		//PlaySoundMem(SelectSE, DX_PLAYTYPE_BACK);
 		if (--cursorPoint.y < 0) {
@@ -67,7 +70,7 @@ AbstractScene* InputRanking::Update() {
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B) == 1) {
 
 		//PlaySoundMem(DesideSE, DX_PLAYTYPE_BACK);
-		ranking.WriteRanking(name, score);
+		ranking.WriteRanking(name, score);		//ファイル書き込みscoreを取得する方法
 
 		return new DrawRanking(/*score*/);
 

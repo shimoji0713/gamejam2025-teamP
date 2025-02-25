@@ -29,7 +29,7 @@ public:
     /// <summary>
     /// コンストラクタ (名前入力の初期化)
     /// </summary>
-    InputRanking();
+    InputRanking(int final_score);
 
     /// <summary>
     /// 描画処理 (ランキングの名前入力画面を描画)
