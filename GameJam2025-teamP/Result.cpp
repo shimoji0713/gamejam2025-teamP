@@ -116,7 +116,7 @@ void Result::TimingScoreCalculation()
 
 	if (timing_score > 100) {
 		var = (timing_score - 100) / 100;
-		timing_score = - 1000 * var;
+		timing_score = - 500 * var;
 	}
 	else
 	{
