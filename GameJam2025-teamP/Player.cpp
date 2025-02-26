@@ -1,22 +1,22 @@
 #include "Player.h"
 #include"DxLib.h"
 
-//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+//ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 Player::Player() :move_animation(),animation_time(),anim(),animation_cont()
 {
-	
+	image = 0;
 }
 
-//ƒfƒXƒgƒ‰ƒNƒ^
+//ï¿½fï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 Player::~Player()
 {
 
 }
 
-//‰Šú‰»ˆ—
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void Player::Initialize()
 {
-	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\batta-1.png", 7, 7, 1, 114, 179, anim);
+	LoadDivGraph("Resource/image/batta-1.png", 7, 7, 1, 114, 179, anim);
 	
 	image = anim[0];
 	animation_time = 0;
