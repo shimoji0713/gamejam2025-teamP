@@ -15,7 +15,7 @@ public:
 
     int cursor_y;
 
-    int bgm;
+    int title_bgm;
 
     int title_se;
 

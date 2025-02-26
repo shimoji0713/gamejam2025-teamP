@@ -56,7 +56,7 @@ AbstractScene* InputRanking::Update() {
 		}
 	}
 
-	if (PAD_INPUT::OnButton(XINPUT_BUTTON_A) == 1 && (name.size() < 5 || keyboard[cursorPoint.y][cursorPoint.x] == '<')) {
+	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B) == 1 && (name.size() < 5 || keyboard[cursorPoint.y][cursorPoint.x] == '<')) {
 		//PlaySoundMem(BackSE, DX_PLAYTYPE_BACK);
 		if (keyboard[cursorPoint.y][cursorPoint.x] == '<') {
 			if (name.size() > 0) {
@@ -67,7 +67,7 @@ AbstractScene* InputRanking::Update() {
 			name += keyboard[cursorPoint.y][cursorPoint.x];
 		}
 	}
-	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B) == 1) {
+	if (PAD_INPUT::OnButton(XINPUT_BUTTON_A) == 1) {
 
 		//PlaySoundMem(DesideSE, DX_PLAYTYPE_BACK);
 		ranking.WriteRanking(name, score);		//ファイル書き込みscoreを取得する方法
@@ -99,5 +99,5 @@ void InputRanking::Draw() const {
 	}
 
 	SetFontSize(32);
-	DrawString(190, 410, "B BUTTON PUSH", 0xffffff);
+	DrawString(190, 410, "A BUTTON PUSH", 0xffffff);
 }

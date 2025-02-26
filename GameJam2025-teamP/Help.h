@@ -10,6 +10,8 @@ public:
 
     int image;
 
+    int help_bgm;
+
     int help_se;
     
 private:
