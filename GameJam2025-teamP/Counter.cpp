@@ -59,7 +59,7 @@ void Counter::Update()
 
 		wait_count++;
 
-		if (wait_count > 1000) {
+		if (wait_count > 500) {
 			end_flg = true;
 		}
 	}
