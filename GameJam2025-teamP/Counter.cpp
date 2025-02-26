@@ -12,6 +12,7 @@ Counter::Counter() :
 {
 	b_count = 0;
 	b_lastcount = -1;
+	fontHandle = 
 
 	value_decrease_count = 0;
 
@@ -26,7 +27,7 @@ Counter::~Counter()
 //初期化処理
 void Counter::Initialize()
 {
-	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\power_battar-41.png", 7, 7, 1, 114, 131, anim);
+	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\power_battar-image.png", 4, 4, 1, 114, 130, anim);
 	chage_se = LoadSoundMem("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\sound\\se\\Chage_SE.mp3");
 
 	image = anim[0];

@@ -16,7 +16,7 @@ GameMain::GameMain()
 
 	result = new Result;
 
-	progress = 2;
+	progress = 1;
 
 	player = new Player();
 	player->Initialize();

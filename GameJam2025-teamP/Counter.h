@@ -18,6 +18,7 @@ private:
 	int image;  //画像
 	int chage_se;  //チャージ音
 	int animation_count;  //カウント
+	int fontHandle;  //フォント
 
 public:
 	// コンストラクタ
