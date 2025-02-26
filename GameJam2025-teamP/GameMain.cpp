@@ -149,7 +149,7 @@ void GameMain::Draw() const
 	{
 		//開始合図
 	case(0):
-		DrawFormatString(0, 0, 0xffffff, "kaisi");
+		//DrawFormatString(0, 0, 0xffffff, "kaisi");
 		DrawGraph(190, 170, kaisi_image, true);
 		//DrawFormatString(250, 0, 0xffffff, "%d", countdown_time);
 		//DrawFormatString(300, 0, 0xffffff, "%d", countdown);
@@ -164,26 +164,26 @@ void GameMain::Draw() const
 
 		//連打
 	case(1):
-		DrawFormatString(0, 0, 0xffffff, "rennda");
+		//DrawFormatString(0, 0, 0xffffff, "rennda");
 
 		counter->Draw();
 		break;
 
 		//角度
 	case(2):
-		DrawFormatString(0, 0, 0xffffff, "kakudo");
+		//DrawFormatString(0, 0, 0xffffff, "kakudo");
 
 		angle->Draw();
 		break;
 
 		//目押し
 	case(3):
-		DrawFormatString(0, 0, 0xffffff, "meosi");
+		//DrawFormatString(0, 0, 0xffffff, "meosi");
 
 		timingpress->Draw();
 		break;
 	case(4):
-		DrawFormatString(0, 0, 0xffffff, "result");
+		//DrawFormatString(0, 0, 0xffffff, "result");
 
 		if (player->GetAnimationEndflg() == true) {
 			result->Draw();
