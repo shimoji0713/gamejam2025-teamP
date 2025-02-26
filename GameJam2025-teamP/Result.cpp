@@ -76,7 +76,7 @@ void Result::Draw() const
 	{
 		for (int i = 0; i < 5; i++)
 		{
-			DrawRotaGraph((i * 50) + 100, 240, 0.5, 0.0, number_images[dt[i]], TRUE);
+			DrawRotaGraph((i * 50) + 200, 240, 0.5, 0.0, number_images[dt[i]], TRUE);
 		}
 	}
 	

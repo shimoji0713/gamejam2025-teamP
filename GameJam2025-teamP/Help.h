@@ -4,7 +4,14 @@
 class Help :public AbstractScene
 {
 public:
+    int help_image;
 
+    int draw_image;
+
+    int image;
+
+    int help_se;
+    
 private:
 
 public:

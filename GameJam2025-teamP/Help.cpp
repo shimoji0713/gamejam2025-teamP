@@ -3,10 +3,12 @@
 #include"PadInput.h"
 #include"Title.h"
 
-int help_se;
-
 Help::Help()
 {
+	help_image= LoadGraph("Resource/image/help.PNG");
+	image = LoadGraph("Resource/image/title.JPG");
+	draw_image = LoadGraph("Resource/image/help2.PNG");
+
 	help_se = LoadSoundMem("Resource/sound/se/maou_se_system49.mp3");
 }
 
@@ -27,9 +29,8 @@ AbstractScene* Help::Update()
 
 void Help::Draw() const
 {
-	DrawFormatString(0, 0, GetColor(255, 255, 255), "B�{�^��������ă^�C�g���ɖ߂�");
-	DrawFormatString(320, 100, GetColor(255, 255, 255), "B�{�^���̂ݎg�p");
-	DrawFormatString(320, 200, GetColor(255, 255, 255), "�Ƃɂ����A��");
-	DrawFormatString(320, 300, GetColor(255, 255, 255), "�Ԃ��Ƃ���Ŏ~�߂�");
-	DrawFormatString(320, 400, GetColor(255, 255, 255), "�s���߂��Ȃ��悤�Ɏ~�߂�");
+	DrawRotaGraph(320, 240, 1.5, 0.0, image, TRUE);
+	DrawBox(10,10,630,470,0xffffff,TRUE);
+	DrawRotaGraph(320, 240, 0.9, 0.0, help_image, TRUE);
+	DrawRotaGraph(450, 450, 0.2, 0.0, draw_image, TRUE);
 }
