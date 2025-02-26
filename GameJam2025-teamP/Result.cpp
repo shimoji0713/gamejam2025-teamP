@@ -58,10 +58,10 @@ AbstractScene* Result::Update()
 
 void Result::Draw() const
 {
-	DrawFormatString(0, 110, 0xffffff, "%f", counter_score);
+	/*DrawFormatString(0, 110, 0xffffff, "%f", counter_score);
 	DrawFormatString(0, 130, 0xffffff, "%f", angle_score);
 	DrawFormatString(0, 150, 0xffffff, "%f", timing_score);
-	DrawFormatString(0, 170, 0xffffff, "%d", final_score);
+	DrawFormatString(0, 170, 0xffffff, "%d", final_score);*/
 
 	int dt[5] = {
 		final_score / 10000 % 10,

@@ -68,8 +68,8 @@ void TimingPress::Update()
 void TimingPress::Draw() const
 {
 	//デバック用表示
-	DrawFormatString(0, 110, 0xffffff, "%d", change_timing);
-	DrawFormatString(0, 130, 0xffffff, "%d", timing_score);
+	/*DrawFormatString(0, 110, 0xffffff, "%d", change_timing);
+	DrawFormatString(0, 130, 0xffffff, "%d", timing_score);*/
 
 	float a = (float)560 * ((float)change_timing / (float)120);
 	DrawBox(480, 400, 600, 450, 0xFF0000, TRUE);
