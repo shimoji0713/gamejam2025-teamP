@@ -5,6 +5,20 @@ class Title :public AbstractScene
 {
 public:
 
+    int title_image;
+
+    int title_name;
+
+    int select_number;
+
+    int cursor_image;
+
+    int cursor_y;
+
+    int bgm;
+
+    int title_se;
+
 private:
 
 public:

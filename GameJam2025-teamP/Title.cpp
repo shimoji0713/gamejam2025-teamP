@@ -12,16 +12,10 @@
 
 #include<math.h>
 
-int title_image;
-int select_number;
-int cursor_image;
-int cursor_y;
-int bgm;
-int title_se;
-
 Title::Title()
 {
 	title_image = LoadGraph("Resource/image/title.JPG");
+	title_name = LoadGraph("Resource/image/title_name.PNG");
 	cursor_image = LoadGraph("Resource/image/cursor.png");
 
 	//bgm = LoadSoundMem("Resource/sound/bgm/small-yakyuu-no-veteran.mp3");
@@ -51,7 +45,7 @@ AbstractScene* Title::Update()
 		select_number = select_number % 4;
 	}
 
-	cursor_y = 240 + (select_number * 60);
+	cursor_y = 220 + (select_number * 60);
 
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
 	{
@@ -76,19 +70,11 @@ void Title::Draw() const
 {
 	DrawRotaGraph(320, 240, 1.5, 0.0, title_image, TRUE);
 	DrawRotaGraph(250, cursor_y, 0.1, 0.0, cursor_image, TRUE);
+	DrawRotaGraph(320, 100, 1.0, 0.0, title_name, TRUE);
 
-	/*SetFontSize();
-	SetFontThickness();
-	ChangeFont("");
-	ChangeFontType();*/
-	DrawFormatString(320, 100, GetColor(255, 0, 0), "�`���[�W�o�b�g");
-
-	/*SetFontSize();
-	SetFontThickness();
-	ChangeFont("");
-	ChangeFontType();*/
-	DrawFormatString(320, 230, GetColor(255, 255, 255), "�X�^�[�g");
-	DrawFormatString(320, 290, GetColor(255, 255, 255), "rannkingu");
-	DrawFormatString(320, 350, GetColor(255, 255, 255), "�w���v");
-	DrawFormatString(320, 410, GetColor(255, 255, 255), "�G���h");
+	SetFontSize(40);
+	DrawFormatString(320, 200, GetColor(255, 255, 255), "START");
+	DrawFormatString(320, 260, GetColor(255, 255, 255), "RANKING");
+	DrawFormatString(320, 320, GetColor(255, 255, 255), "HELP");
+	DrawFormatString(320, 380, GetColor(255, 255, 255), "END");
 }
