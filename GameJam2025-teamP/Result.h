@@ -22,7 +22,7 @@ private:
 
 	int fram;
 
-	
+	bool anime_endFlg;
 
 public:
 	// コンストラクタ
@@ -52,5 +52,8 @@ public:
 	//目押しスコアの計算
 	void TimingScoreCalculation();
 
+	bool GetAnime_endFlg();
+
+	int GetScore();
 };
 
