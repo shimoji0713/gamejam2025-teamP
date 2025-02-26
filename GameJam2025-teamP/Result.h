@@ -14,9 +14,11 @@ private:
 
 	int number_images[10];
 
-	int animation_cont;
-
 	int anime_images[10];
+
+	int result_se;
+
+	int animation_cont;
 
 	int fram;
 
