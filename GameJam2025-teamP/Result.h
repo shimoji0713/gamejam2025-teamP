@@ -22,6 +22,8 @@ private:
 
 	int fram;
 
+	
+
 public:
 	// コンストラクタ
 	Result();

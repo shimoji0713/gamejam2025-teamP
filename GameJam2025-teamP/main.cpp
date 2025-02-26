@@ -10,6 +10,7 @@
 #define SCREEN_HEIGHT 480	// 画面の高さ
 #define SCREEN_WIDTH 640	// 画面の幅
 #define REFRESHRATE 32		// リフレッシュレート
+int bgm;
 
 /***********************************************
  * �v���O�����̊J�n
@@ -50,6 +51,9 @@ int WINAPI WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 		return 0;
 	}
 	//FpsController FPSC(FRAMERATE, 800);
+
+	bgm = LoadSoundMem("Resource/sound/bgm/small-yakyuu-no-veteran.mp3");
+	PlaySoundMem(bgm, DX_PLAYTYPE_LOOP);
 
 	/***********************************************
 	 * メインループ（ゲームが動作する間ループを繰り返す）

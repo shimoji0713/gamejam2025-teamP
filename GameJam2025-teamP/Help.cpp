@@ -9,10 +9,7 @@ Help::Help()
 	image = LoadGraph("Resource/image/title.JPG");
 	draw_image = LoadGraph("Resource/image/help2.PNG");
 
-	help_bgm = LoadSoundMem("Resource/sound/bgm/small-yakyuu-no-veteran.mp3");
 	help_se = LoadSoundMem("Resource/sound/se/maou_se_system49.mp3");
-
-	PlaySoundMem(help_bgm, DX_PLAYTYPE_LOOP);
 }
 
 Help::~Help()
@@ -24,8 +21,7 @@ AbstractScene* Help::Update()
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
 	{
 		PlaySoundMem(help_se, DX_PLAYTYPE_NORMAL);
-		StopSoundMem(help_bgm);
-
+		
 		return new Title;
 	}
 	return this;

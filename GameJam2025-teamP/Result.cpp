@@ -45,12 +45,12 @@ AbstractScene* Result::Update()
 		animation_cont = 0;
 	}
 
-	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
+	/*if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
 	{
 		PlaySoundMem(result_se, DX_PLAYTYPE_NORMAL);
 
 		return new Title;
-	}
+	}*/
 	return this;
 }
 
@@ -71,7 +71,10 @@ void Result::Draw() const
 
 	if (fram<180)
 	{
-		DrawRotaGraph(250, 240, 2.0, 0.0, anime_images[animation_cont], TRUE);
+		for (int i = 0; i < 5; i++)
+		{
+			DrawRotaGraph((i * 50) + 200, 240, 0.5, 0.0, anime_images[animation_cont], TRUE);
+		}
 	}
 
 	if (fram > 180)
