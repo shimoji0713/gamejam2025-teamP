@@ -7,6 +7,7 @@ Counter::Counter() :
 	 animation_count()
 	,anim()
 	,image()
+	,ball_image()
 	,chage_se()
 
 {
@@ -28,6 +29,7 @@ Counter::~Counter()
 void Counter::Initialize()
 {
 	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\power_battar-image.png", 4, 4, 1, 114, 130, anim);
+	ball_image = LoadGraph("Resource/image/baseball.png");
 	chage_se = LoadSoundMem("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\sound\\se\\Chage_SE.mp3");
 
 	image = anim[0];
@@ -50,17 +52,18 @@ void Counter::Update()
 //描画処理
 void Counter::Draw() const
 {
-	DrawRotaGraph(460, 150, 1.5, 0.0, image, true);
+	DrawRotaGraph(500, 130, 2, 0.0, image, true);
+	DrawRotaGraph(500, 380, 0.5, 0, ball_image, TRUE);
 
-	DrawFormatString(250, 110, 0xffffff, "%d", b_count);
-	DrawFormatString(0, 130, 0xffffff, "%d", counter_time);
-	DrawFormatString(0, 150, 0xffffff, "%d", value_decrease_count);
+	DrawFormatString(470, 360, 0x000000, "%d", b_count);
+	DrawFormatString(250, 0, 0xffffff, "%d", counter_time);
+	//DrawFormatString(0, 150, 0xffffff, "%d", value_decrease_count);
 
 	//DrawBox(300, 200, 600, 240, 0x0000ff, true);
 	//ゲージ枠組み
-	DrawBox(300, 350, 600, 390, 0xffffff, false);
+	DrawBox(380, 260, 620, 300, 0xffffff, false);
 	//ゲージ本体
-	DrawBox(300, 350, 300 + b_count, 390, 0xffff00, true);
+	DrawBox(380, 260, 380 + b_count, 300, 0xffff00, true);
 
 }
 
@@ -91,19 +94,19 @@ void Counter::PushButton()
 //ボタンを押した回数によってアニメーションを変える
 void Counter::Counter_Animation()
 {
-	if (b_count >= 20)
-	{
-		image = anim[1];
-	}
-
-	if (b_count >= 30)
+	if (b_count >= 200)
 	{
 		image = anim[2];
 	}
 
-	if (b_count >= 40)
+	if (b_count >= 250)
 	{
 		image = anim[3];
+	}
+
+	if (b_count >= 270)
+	{
+		image = anim[1];
 	}
 
 }

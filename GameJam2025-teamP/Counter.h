@@ -16,6 +16,7 @@ private:
 private:
 	int anim[4];  //プレイヤーのアニメーション
 	int image;  //画像
+	int ball_image;
 	int chage_se;  //チャージ音
 	int animation_count;  //カウント
 	int fontHandle;  //フォント
