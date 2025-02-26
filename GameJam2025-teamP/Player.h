@@ -8,15 +8,18 @@ private:
 	int animation_cont;
 	float animation_time;
 
+	bool animation_endflg;
+
 public:
 	Player();
 	~Player();
 
 	void Initialize(); //����������
-	void Update(); //�X�V����
+	void Update(int progress); //�X�V����
 	void Draw();//�`�揈��
 	void Finalize();//�I������
 
+	bool GetAnimationEndflg();
 	/// <summary>
 
 private:
