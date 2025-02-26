@@ -8,6 +8,7 @@ Counter::Counter() :
 	,anim()
 	,image()
 	,ball_image()
+	,limit_image()
 	,chage_se()
 
 {
@@ -18,6 +19,7 @@ Counter::Counter() :
 	value_decrease_count = 0;
 
 	counter_time = 0;
+	max_counter_time = 3000;
 }
 
 Counter::~Counter()
@@ -30,6 +32,7 @@ void Counter::Initialize()
 {
 	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\power_battar-image.png", 4, 4, 1, 114, 130, anim);
 	ball_image = LoadGraph("Resource/image/baseball.png");
+	limit_image = LoadGraph("Resource/image/limit.png");
 	chage_se = LoadSoundMem("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\sound\\se\\Chage_SE.mp3");
 
 	image = anim[0];
@@ -56,7 +59,15 @@ void Counter::Draw() const
 	DrawRotaGraph(500, 380, 0.5, 0, ball_image, TRUE);
 
 	DrawFormatString(470, 360, 0x000000, "%d", b_count);
-	DrawFormatString(250, 0, 0xffffff, "%d", counter_time);
+
+	//残り時間のゲージ
+	DrawRotaGraph(220, 25, 0.5, 0, limit_image, TRUE);
+	DrawBox(300, 10, 600, 40, 0xffffff, false);
+	DrawBox(300, 10, 600-counter_time/10, 40, 0x80eeff, true);
+
+
+
+	//DrawFormatString(250, 0, 0xffffff, "%d", counter_time);
 	//DrawFormatString(0, 150, 0xffffff, "%d", value_decrease_count);
 
 	//DrawBox(300, 200, 600, 240, 0x0000ff, true);
