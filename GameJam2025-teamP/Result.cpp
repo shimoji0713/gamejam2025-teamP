@@ -22,6 +22,8 @@ Result::Result()
 	animation_cont = 0;
 
 	fram = 0;
+	anime_endFlg = true;
+	anime_endFlg = false;
 }
 
 Result::~Result()
@@ -49,7 +51,7 @@ AbstractScene* Result::Update()
 	{
 		PlaySoundMem(result_se, DX_PLAYTYPE_NORMAL);
 
-		return new Title;
+		anime_endFlg = true;
 	}
 	return this;
 }

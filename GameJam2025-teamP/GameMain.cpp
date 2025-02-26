@@ -89,7 +89,7 @@ AbstractScene* GameMain::Update()
 
 		}
 
-		if (result->GetAnime_endFlg())
+		if (result->GetAnime_endFlg()==true)
 		{
 			if (result->GetScore() > rankingData[4].score) {
 				return new InputRanking(result->GetScore());
