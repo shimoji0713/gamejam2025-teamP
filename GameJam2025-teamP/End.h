@@ -6,8 +6,9 @@ class End :public AbstractScene
 public:
 
 private:
-
-
+    int end;
+    int endimage;
+    int count;
 public:
     // コンストラクタ
     End();

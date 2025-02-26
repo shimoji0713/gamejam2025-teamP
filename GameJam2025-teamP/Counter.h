@@ -23,6 +23,10 @@ private:
 	int animation_count;  //カウント
 	int fontHandle;  //フォント
 
+	int wait_count;
+
+	bool end_flg;       //終了フラグ
+
 public:
 	// コンストラクタ
 	Counter();
@@ -45,5 +49,8 @@ public:
 
 	//ボタンを押した回数によってアニメーションを変える
 	void Counter_Animation();
+
+	//終了確認
+	bool GetEndFlg();
 };
 
