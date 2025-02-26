@@ -22,7 +22,7 @@ Result::Result()
 	animation_cont = 0;
 
 	fram = 0;
-
+	anime_endFlg = true;
 	anime_endFlg = false;
 }
 
@@ -49,6 +49,8 @@ AbstractScene* Result::Update()
 
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
 	{
+		PlaySoundMem(result_se, DX_PLAYTYPE_NORMAL);
+
 		anime_endFlg = true;
 	}
 	return this;
@@ -56,10 +58,10 @@ AbstractScene* Result::Update()
 
 void Result::Draw() const
 {
-	DrawFormatString(0, 110, 0xffffff, "%f", counter_score);
+	/*DrawFormatString(0, 110, 0xffffff, "%f", counter_score);
 	DrawFormatString(0, 130, 0xffffff, "%f", angle_score);
 	DrawFormatString(0, 150, 0xffffff, "%f", timing_score);
-	DrawFormatString(0, 170, 0xffffff, "%d", final_score);
+	DrawFormatString(0, 170, 0xffffff, "%d", final_score);*/
 
 	int dt[5] = {
 		final_score / 10000 % 10,
@@ -71,7 +73,10 @@ void Result::Draw() const
 
 	if (fram<180)
 	{
-		DrawRotaGraph(250, 240, 2.0, 0.0, anime_images[animation_cont], TRUE);
+		for (int i = 0; i < 5; i++)
+		{
+			DrawRotaGraph((i * 50) + 200, 240, 0.5, 0.0, anime_images[animation_cont], TRUE);
+		}
 	}
 
 	if (fram > 180)
