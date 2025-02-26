@@ -7,9 +7,11 @@ Counter::Counter() :
 	 animation_count()
 	,anim()
 	,image()
+	,chage_se()
 
 {
 	b_count = 0;
+	b_lastcount = -1;
 
 	value_decrease_count = 0;
 
@@ -24,7 +26,8 @@ Counter::~Counter()
 //初期化処理
 void Counter::Initialize()
 {
-	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\power_battar-1.png", 4, 4, 1, 212.5, 200, anim);
+	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\power_battar-41.png", 7, 7, 1, 114, 131, anim);
+	chage_se = LoadSoundMem("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\sound\\se\\Chage_SE.mp3");
 
 	image = anim[0];
 }
@@ -46,9 +49,9 @@ void Counter::Update()
 //描画処理
 void Counter::Draw() const
 {
-	DrawRotaGraph(470, 170, 0, 0.0, image, true);
+	DrawRotaGraph(460, 150, 1.5, 0.0, image, true);
 
-	DrawFormatString(0, 110, 0xffffff, "%d", b_count);
+	DrawFormatString(250, 110, 0xffffff, "%d", b_count);
 	DrawFormatString(0, 130, 0xffffff, "%d", counter_time);
 	DrawFormatString(0, 150, 0xffffff, "%d", value_decrease_count);
 
@@ -74,6 +77,13 @@ void Counter::PushButton()
 	{
 		b_count++;
 	
+	}
+
+	//カウントが5の倍数の時に一回ずつサウンドを鳴らす
+	if (b_count % 5 == 0 && b_count != 0 && b_count != b_lastcount)
+	{
+		PlaySoundMem(chage_se, DX_PLAYTYPE_BACK);
+		b_lastcount = b_count;
 	}
 }
 
