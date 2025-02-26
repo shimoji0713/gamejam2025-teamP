@@ -18,11 +18,13 @@ Title::Title()
 	title_name = LoadGraph("Resource/image/title_name.PNG");
 	cursor_image = LoadGraph("Resource/image/cursor.png");
 
-	//bgm = LoadSoundMem("Resource/sound/bgm/small-yakyuu-no-veteran.mp3");
+	title_bgm = LoadSoundMem("Resource/sound/bgm/small-yakyuu-no-veteran.mp3");
 	title_se= LoadSoundMem("Resource/sound/se/maou_se_system49.mp3");
 
 	select_number = 0;
 	cursor_y = 240;
+
+	PlaySoundMem(title_bgm, DX_PLAYTYPE_LOOP);
 }
 
 Title::~Title()
@@ -50,6 +52,7 @@ AbstractScene* Title::Update()
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
 	{
 		PlaySoundMem(title_se,DX_PLAYTYPE_NORMAL);
+		StopSoundMem(title_bgm);
 
 		switch (select_number)
 		{

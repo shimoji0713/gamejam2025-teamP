@@ -17,6 +17,8 @@ Result::Result()
 	LoadDivGraph("Resource/image/NUMBER.png", 10, 5, 2, 160, 160, number_images);
 	LoadDivGraph("Resource/image/NUMBER.png", 10, 5, 2, 160, 160, anime_images);
 
+	result_se = LoadSoundMem("Resource/sound/se/maou_se_system49.mp3");
+
 	animation_cont = 0;
 
 	fram = 0;
@@ -76,7 +78,7 @@ void Result::Draw() const
 	{
 		for (int i = 0; i < 5; i++)
 		{
-			DrawRotaGraph((i * 50) + 100, 240, 0.5, 0.0, number_images[dt[i]], TRUE);
+			DrawRotaGraph((i * 50) + 200, 240, 0.5, 0.0, number_images[dt[i]], TRUE);
 		}
 	}
 	
