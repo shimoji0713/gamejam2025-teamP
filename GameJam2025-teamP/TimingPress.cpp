@@ -18,6 +18,8 @@ TimingPress::TimingPress()
 
 	wait_count = 0;
 
+	rikimi_image = LoadGraph("Resource/image/rikimisugi1.png");
+
 }
 
 TimingPress::~TimingPress()
@@ -70,9 +72,10 @@ void TimingPress::Draw() const
 	DrawFormatString(0, 130, 0xffffff, "%d", timing_score);
 
 	float a = (float)560 * ((float)change_timing / (float)120);
-
+	DrawBox(480, 400, 600, 450, 0xFF0000, TRUE);
 	DrawBox(40,400,40+a,450,0x00FFFF,TRUE);
 	DrawBox(40, 400, 600, 450, 0xffffff, false);
+	DrawRotaGraph(540, 425, 1, 0, rikimi_image, TRUE);
 
 }
 

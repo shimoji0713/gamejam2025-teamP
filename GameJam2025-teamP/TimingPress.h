@@ -14,6 +14,8 @@ private:
 
     int wait_count;
 
+    int rikimi_image;
+
     bool end_flg;       //終了フラグ
 
 public:

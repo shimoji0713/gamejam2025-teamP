@@ -3,20 +3,10 @@
 #include "GameMain.h"
 #include "PadInput.h"
 
-#include"DrawRanking.h"
-#include"InputRanking.h"
-
 
 
 GameMain::GameMain()
 {
-	ranking.ReadRanking();
-
-	// 読み込んだランキングデータをメンバ変数にコピー
-	for (int i = 0; i < 5; i++) {
-		rankingData[i] = ranking.GetRankingData(i);
-	}
-
 	counter = new Counter;
 	counter->Initialize();
 
@@ -45,8 +35,7 @@ GameMain::~GameMain()
 
 AbstractScene* GameMain::Update()
 {
-
-	player->Update(progress);
+	player->Update();
 
 	switch (progress)
 	{
@@ -83,28 +72,23 @@ AbstractScene* GameMain::Update()
 		break;
 
 	case(4):
-		
+		result->SetCounterScore(counter->GetCount());
+		result->SetAngleScore(angle->GetAngle());
+		result->SetTimingScore(timingpress->GetTimingScore());
+		result->Update();
 
-		if (player->GetAnimationEndflg() == true) {
-			result->SetCounterScore(counter->GetCount());
-			result->SetAngleScore(angle->GetAngle());
-			result->SetTimingScore(timingpress->GetTimingScore());
-			result->Update();
-			
-		}
-		
+		//if(リザルト終了確認)
+		// {
+		//	if(ゲームスコアとランキングを比べる){
+		//		ゲームスコアが上だったら
+		//		return new InputRanking();
+		//	}else{
+		//		ゲームスコアが下だったら
+		//		return new DrawRanking();
+		//	}
+		// }
+		//
 
-
-		if(result->GetAnime_endFlg())
-		 {
-			if(result->GetScore()>rankingData[4].score) {
-				return new InputRanking(result->GetScore());
-			}else{
-				return new DrawRanking();
-			}
-		 }
-		
-		
 
 
 	default:
@@ -154,9 +138,8 @@ void GameMain::Draw() const
 		break;
 	case(4):
 		DrawFormatString(0, 0, 0xffffff, "result");
-		if (player->GetAnimationEndflg() == true) {
-			result->Draw();
-		}
+
+		result->Draw();
 		break;
 	default:
 		break;
