@@ -1,34 +1,40 @@
 #include "Player.h"
 #include"DxLib.h"
 
-//ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+//ï¿½Rï¿½ï¿½ï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 Player::Player() :move_animation(),animation_time(),anim(),animation_cont()
 {
-	
+	image = 0;
+
+	animation_endflg = false;
 }
 
-//ƒfƒXƒgƒ‰ƒNƒ^
+//ï¿½fï¿½Xï¿½gï¿½ï¿½ï¿½Nï¿½^
 Player::~Player()
 {
 
 }
 
-//‰Šú‰»ˆ—
+//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 void Player::Initialize()
 {
-	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\batta-1.png", 7, 7, 1, 114, 179, anim);
+	LoadDivGraph("Resource/image/batta-1.png", 7, 7, 1, 114, 179, anim);
 	
 	image = anim[0];
 	animation_time = 0;
 }
-void Player::Update()
+void Player::Update(int progress)
 {
 
-	AnimationControl();
+	int game_progress = progress;
+	if (progress > 3) {
+		AnimationControl();
+	}
+	
 }
 void Player::Draw()
 {
-	DrawRotaGraph(320, 240, 1.0, 0.0, image, true);
+	DrawRotaGraph(240, 260, 1.0, 0.0, image, true);
 }
 void Player::Finalize()
 {
@@ -39,15 +45,20 @@ void Player::AnimationControl()
 {
 	animation_time++;
 
-	if (animation_time >= 15.0)
+	if (animation_time >= 25.0&& animation_cont < 6)
 	{
 		animation_time = 0.0f;
 		animation_cont++;
-		if (animation_cont >= 7)
+		if (animation_cont >= 6)
 		{
-			animation_cont = 0;
+			animation_endflg = true;
 		}
-
-		image = anim[animation_cont];
 	}
+
+	image = anim[animation_cont];
+}
+
+bool Player::GetAnimationEndflg()
+{
+	return animation_endflg;
 }

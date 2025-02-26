@@ -3,10 +3,20 @@
 #include "GameMain.h"
 #include "PadInput.h"
 
+#include"DrawRanking.h"
+#include"InputRanking.h"
+
 
 
 GameMain::GameMain()
 {
+	ranking.ReadRanking();
+
+	// 読み込んだランキングデータをメンバ変数にコピー
+	for (int i = 0; i < 5; i++) {
+		rankingData[i] = ranking.GetRankingData(i);
+	}
+
 	counter = new Counter;
 	counter->Initialize();
 
@@ -16,10 +26,12 @@ GameMain::GameMain()
 
 	result = new Result;
 
-	progress = 1;
+	progress = 2;
 
 	player = new Player();
 	player->Initialize();
+
+	background_image= LoadGraph("Resource/image/haikei.png");
 
 }
 
@@ -33,7 +45,8 @@ GameMain::~GameMain()
 
 AbstractScene* GameMain::Update()
 {
-	player->Update();
+
+	player->Update(progress);
 
 	switch (progress)
 	{
@@ -50,18 +63,46 @@ AbstractScene* GameMain::Update()
 	//角度
 	case(2):
 		angle->Update();
+
+		if (angle->GetEndFlg() == true) {
+			progress = progress + 1;
+		}
 		break;
 
 	//目押し
 	case(3):
 		timingpress->Update();
+
+		if (timingpress->GetEndFlg() == true) {
+			progress = progress + 1;
+		}
 		break;
 
 	case(4):
-		result->SetCounterScore(counter->GetCount());
-		result->SetAngleScore(angle->GetAngle());
-		result->SetTimingScore(timingpress->GetTimingScore());
-		result->Update();
+		
+
+		if (player->GetAnimationEndflg() == true) {
+			result->SetCounterScore(counter->GetCount());
+			result->SetAngleScore(angle->GetAngle());
+			result->SetTimingScore(timingpress->GetTimingScore());
+			result->Update();
+			
+		}
+		
+
+
+		if(result->GetAnime_endFlg())
+		 {
+			if(result->GetScore()>rankingData[4].score) {
+				return new InputRanking(result->GetScore());
+			}else{
+				return new DrawRanking();
+			}
+		 }
+		
+		
+
+
 	default:
 		break;
 	}
@@ -76,6 +117,7 @@ AbstractScene* GameMain::Update()
 
 void GameMain::Draw() const
 {
+	DrawGraph(0,0,background_image,true);
 	
 	player->Draw();
 
@@ -108,8 +150,9 @@ void GameMain::Draw() const
 		break;
 	case(4):
 		DrawFormatString(0, 0, 0xffffff, "result");
-
-		result->Draw();
+		if (player->GetAnimationEndflg() == true) {
+			result->Draw();
+		}
 		break;
 	default:
 		break;

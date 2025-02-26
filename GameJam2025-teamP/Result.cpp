@@ -17,9 +17,13 @@ Result::Result()
 	LoadDivGraph("Resource/image/NUMBER.png", 10, 5, 2, 160, 160, number_images);
 	LoadDivGraph("Resource/image/NUMBER.png", 10, 5, 2, 160, 160, anime_images);
 
+	result_se = LoadSoundMem("Resource/sound/se/maou_se_system49.mp3");
+
 	animation_cont = 0;
 
 	fram = 0;
+
+	anime_endFlg = false;
 }
 
 Result::~Result()
@@ -45,9 +49,7 @@ AbstractScene* Result::Update()
 
 	if (PAD_INPUT::OnButton(XINPUT_BUTTON_B))
 	{
-		//PlaySoundMem(title_se, DX_PLAYTYPE_NORMAL);
-
-		return new Title;
+		anime_endFlg = true;
 	}
 	return this;
 }
@@ -76,7 +78,7 @@ void Result::Draw() const
 	{
 		for (int i = 0; i < 5; i++)
 		{
-			DrawRotaGraph((i * 50) + 100, 240, 0.5, 0.0, number_images[dt[i]], TRUE);
+			DrawRotaGraph((i * 50) + 200, 240, 0.5, 0.0, number_images[dt[i]], TRUE);
 		}
 	}
 	
@@ -116,7 +118,7 @@ void Result::TimingScoreCalculation()
 
 	if (timing_score > 100) {
 		var = (timing_score - 100) / 100;
-		timing_score = - 1000 * var;
+		timing_score = - 500 * var;
 	}
 	else
 	{
@@ -124,4 +126,14 @@ void Result::TimingScoreCalculation()
 		timing_score = 1000 * var;
 	}
 
+}
+
+bool Result::GetAnime_endFlg()
+{
+	return anime_endFlg;
+}
+
+int Result::GetScore()
+{
+	return final_score;
 }

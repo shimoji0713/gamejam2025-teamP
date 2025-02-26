@@ -15,7 +15,7 @@ Angle::Angle()
 
     change_angle = 0;
 
-    angle_speed =1;     //ここで速さを変更する
+    angle_speed =0;     //ここで速さを変更する
 
     speed_count = 0;
 
@@ -25,6 +25,10 @@ Angle::Angle()
 
     time_count = 0;
 
+
+    end_flg = false;
+
+    wait_count = 0;
 }
 
 Angle::~Angle()
@@ -58,6 +62,15 @@ void Angle::Update()
         }
 
     }
+    else
+    {
+        
+        wait_count++;
+
+        if (wait_count > 30) {
+            end_flg = true;
+        }
+    }
 
     if (PAD_INPUT::OnButton(XINPUT_BUTTON_B)) {
         angle = 90-change_angle;
@@ -75,13 +88,18 @@ void Angle::Draw() const
     DrawFormatString(0, 130, 0xffffff, "%d", angle);
     DrawFormatString(0, 150, 0xffffff, "%d", time_count);
 
-    DrawRotaGraph(300, 300 , 1, 0, angle_image, TRUE);
+    DrawRotaGraph(370, 190 , 1, 0, angle_image, TRUE);
 
-    DrawRotaGraph2(300-120, 300+120, 0, 12, 1, Image_angle, target_image, TRUE);
+    DrawRotaGraph2(370-120, 190+120, 0, 12, 1, Image_angle, target_image, TRUE);
     
 }
 
 int Angle::GetAngle()
 {
     return angle;
+}
+
+bool Angle::GetEndFlg()
+{
+    return end_flg;
 }

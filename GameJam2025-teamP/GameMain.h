@@ -7,9 +7,15 @@
 #include"Result.h"
 #include"Player.h"
 
+#include "Ranking.h"
+
 class GameMain: public AbstractScene
 {
 private:
+
+    Ranking ranking;  // ランキングデータ管理用
+    Ranking::RANKING_DATA rankingData[5];  // 5つのランキングデータ
+
     Counter* counter;
 
     Angle* angle;
@@ -21,6 +27,8 @@ private:
     int progress;       //ゲームの進行度
 
     Player* player;
+
+    int background_image;   //背景画像
 
 public:
     // コンストラクタ

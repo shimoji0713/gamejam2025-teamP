@@ -26,7 +26,7 @@ DrawRanking::DrawRanking(/*int score スコアを受け取る場合の引数*/) 
 // Aボタンが押されたら次のシーンへ遷移する
 /// <returns>次のシーンのポインタ (Aボタンが押されていなければ this を返す)</returns>
 AbstractScene* DrawRanking::Update() {
-    if (PAD_INPUT::OnRelease(XINPUT_BUTTON_A) == 1) {
+    if (PAD_INPUT::OnButton(XINPUT_BUTTON_A) == 1) {
         //PlaySoundMem(DesideSE, DX_PLAYTYPE_BACK);  // 決定音を再生
 
         return new Title();  
