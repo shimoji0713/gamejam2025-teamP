@@ -20,6 +20,10 @@ Counter::Counter() :
 
 	counter_time = 0;
 	max_counter_time = 3000;
+
+	end_flg = false;
+
+	wait_count = 0;
 }
 
 Counter::~Counter()
@@ -30,10 +34,10 @@ Counter::~Counter()
 //初期化処理
 void Counter::Initialize()
 {
-	LoadDivGraph("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\image\\power_battar-image.png", 4, 4, 1, 114, 130, anim);
+	LoadDivGraph("Resource/image/power_battar-image.png", 4, 4, 1, 114, 130, anim);
 	ball_image = LoadGraph("Resource/image/baseball.png");
 	limit_image = LoadGraph("Resource/image/limit.png");
-	chage_se = LoadSoundMem("C:\\PG\\gamejam2025-teamP\\GameJam2025-teamP\\Resource\\sound\\se\\Chage_SE.mp3");
+	chage_se = LoadSoundMem("Resource/Resource/sound/se/Chage_SE.mp3");
 
 	image = anim[0];
 }
@@ -49,6 +53,15 @@ void Counter::Update()
 		counter_time++;
 
 		Counter_Animation();
+	}
+	else
+	{
+
+		wait_count++;
+
+		if (wait_count > 1000) {
+			end_flg = true;
+		}
 	}
 }
 
@@ -105,19 +118,23 @@ void Counter::PushButton()
 //ボタンを押した回数によってアニメーションを変える
 void Counter::Counter_Animation()
 {
-	if (b_count >= 200)
+	if (b_count >= 50)
 	{
 		image = anim[2];
 	}
 
-	if (b_count >= 250)
+	if (b_count >= 100)
 	{
 		image = anim[3];
 	}
 
-	if (b_count >= 270)
+	if (b_count >= 150)
 	{
 		image = anim[1];
 	}
+}
 
+bool Counter::GetEndFlg()
+{
+	return end_flg;
 }

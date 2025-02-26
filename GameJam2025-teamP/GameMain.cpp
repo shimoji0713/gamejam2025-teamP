@@ -26,7 +26,7 @@ GameMain::GameMain()
 
 	result = new Result;
 
-	progress = 2;
+	progress = 1;
 
 	player = new Player();
 	player->Initialize();
@@ -58,6 +58,10 @@ AbstractScene* GameMain::Update()
 	//連打
 	case(1):
 		counter->Update();
+
+		if (counter->GetEndFlg() == true) {
+			progress = progress + 1;
+		}
 		break;
 
 	//角度
