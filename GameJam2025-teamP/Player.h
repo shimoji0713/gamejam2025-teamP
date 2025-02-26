@@ -12,24 +12,24 @@ public:
 	Player();
 	~Player();
 
-	void Initialize(); //‰Šú‰»ˆ—
-	void Update(); //XVˆ—
-	void Draw();//•`‰æˆ—
-	void Finalize();//I—¹ˆ—
+	void Initialize(); //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
+	void Update(); //ï¿½Xï¿½Vï¿½ï¿½ï¿½ï¿½
+	void Draw();//ï¿½`ï¿½æˆï¿½ï¿½
+	void Finalize();//ï¿½Iï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 	/// <summary>
 
 private:
 	
-	int move_animation;  //ƒAƒjƒ[ƒVƒ‡ƒ“‰æ‘œ
-	// ˆÚ“®ƒAƒjƒ[ƒVƒ‡ƒ“‚Ì‡”Ô
+	int move_animation;  //ï¿½Aï¿½jï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½æ‘œ
+	// ï¿½Ú“ï¿½ï¿½Aï¿½jï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½
 	const int animation_num[7] = { 0, 1, 2, 3, 4, 5, 6,};
+	//int background_image;		//ï¿½wï¿½iï¿½æ‘œ
 
-	/// ƒAƒjƒ[ƒVƒ‡ƒ“§Œä
+	/// ï¿½Aï¿½jï¿½ï¿½ï¿½[ï¿½Vï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	/// </summary>
-	/// <param name="delta_second">1ƒtƒŒ[ƒ€‚ ‚½‚è‚ÌŠÔ</param>
+	/// <param name="delta_second">1ï¿½tï¿½ï¿½ï¿½[ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ìï¿½ï¿½ï¿½</param>
 	void AnimationControl();
 
 	
 };
-

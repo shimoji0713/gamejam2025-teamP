@@ -18,7 +18,7 @@ private:
 	static XINPUT_STATE Input; //パッドの入力情報
 	static Stick Rstick; //右スティックの状態
 	static Stick Lstick; //左スティックの状態
-private:
+public:
 	//コンストラクタ
 	PAD_INPUT() = default;
 

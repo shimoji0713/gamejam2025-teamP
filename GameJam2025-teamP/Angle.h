@@ -24,6 +24,11 @@ private:
 
     int time_count;     //制限時間カウント
 
+
+    int wait_count;
+
+    bool end_flg;       //終了フラグ
+
 public:
     // コンストラクタ
     Angle();
@@ -39,5 +44,8 @@ public:
 
     //角度の値を獲得
     int GetAngle();
+
+    //終了確認
+    bool GetEndFlg();
 };
 
