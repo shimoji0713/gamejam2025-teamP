@@ -25,13 +25,18 @@ GameMain::GameMain()
 
 	result = new Result;
 
-	progress = 1;
+	progress = 0;
 
 	player = new Player();
 	player->Initialize();
 
 	background_image= LoadGraph("Resource/image/haikei.png");
+	kaisi_image = LoadGraph("Resource/image/renda_rule.png");
+	Go_image = LoadGraph("Resource/image/GO.png");
+	LoadDivGraph("Resource/image/NUMBER.png", 10, 5, 2, 160, 160, count);
 
+	countdown_image = count[3];
+	countdown = 301;
 }
 
 GameMain::~GameMain()
@@ -50,6 +55,27 @@ AbstractScene* GameMain::Update()
 	{
 	//開始合図
 	case(0):
+		//制限時間処理
+		if (countdown_time <= 350) {
+
+			countdown_time++;
+			countdown--;
+			if (countdown <= 250) {
+				countdown_image = count[2];
+			}
+			if (countdown <= 150) {
+				countdown_image = count[1];
+			}
+			if (countdown <= 50) {
+				DeleteGraph(countdown_image);
+	
+			}
+			if (countdown <= 0) {
+				progress = progress + 1;
+
+			}
+
+		}
 		
 		break;
 
@@ -124,6 +150,16 @@ void GameMain::Draw() const
 		//開始合図
 	case(0):
 		DrawFormatString(0, 0, 0xffffff, "kaisi");
+		DrawGraph(190, 170, kaisi_image, true);
+		//DrawFormatString(250, 0, 0xffffff, "%d", countdown_time);
+		//DrawFormatString(300, 0, 0xffffff, "%d", countdown);
+		DrawRotaGraph(270, 90, 1.0, 0.0, countdown_image, true);
+		if (countdown <= 50)
+		{
+			DrawRotaGraph(270, 90, 1.0, 0.0, Go_image, true);
+		}
+		
+
 		break;
 
 		//連打

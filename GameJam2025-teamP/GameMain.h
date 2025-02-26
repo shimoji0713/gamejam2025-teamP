@@ -28,7 +28,14 @@ private:
 
     Player* player;
 
+    int countdown_time;  //3カウント用
+
     int background_image;   //背景画像
+    int kaisi_image;  //連打開始時の画像
+    int count[10];  //カウント用
+    int countdown;
+    int countdown_image;  //カウント画像用
+    int Go_image;
 
 public:
     // コンストラクタ
